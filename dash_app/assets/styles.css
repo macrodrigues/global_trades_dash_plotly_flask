@@ -53,3 +53,10 @@ h3.subtitle {
     color: white;
   }
 
+.dropdowns-container {
+    justify-content: center; 
+    display: flex;
+    margin: auto;
+}
+
+

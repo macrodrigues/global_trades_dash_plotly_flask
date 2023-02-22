@@ -108,15 +108,32 @@ def dash_app_global(flask_app, path):
                             children="Total traded by commodity" 
                         ),
                         html.Div([
-                            dcc.Dropdown(
-                                id='years-picker', 
-                                options = years,
-                                value = years[-1]),
-                            dcc.Dropdown(
-                                id='categories-picker', 
-                                options = categories_num,
-                                value = categories_num[0]),
-                        ], style={'width': '20%', 'display':'inline-block'}),
+                            html.Div([
+                                html.H4(
+                                    children='Year',
+                                    style={'font-size': '1.2vw'}),
+                                dcc.Dropdown(
+                                    id='years-picker', 
+                                    options=years,
+                                    value=years[-1]),
+                            ], style={
+                                'width': '15%', 
+                                'display':'inline-block',
+                                'margin': "2% 2% 2% 2%"}),
+                            html.Div([
+                                html.H4(
+                                    children='Category',
+                                    style={'font-size': '1.2vw'}),
+                                dcc.Dropdown(
+                                    id='categories-picker', 
+                                    options=categories_num,
+                                    value=categories_num[0]),
+                            ], style={
+                                'width': '10%', 
+                                'display':'inline-block',
+                                'margin': "2% 2% 2% 2%"})
+                        ], className='dropdowns-container'),
+
                         html.Div([
                             dcc.Graph(id='graph-commodities'),
                         ]),
@@ -164,15 +181,16 @@ def dash_app_global(flask_app, path):
         fig = go.Figure({'data':data, 'layout':layout})
         return fig
        
-    # @app.callback(
-    #     Output(component_id='graph-commodities', component_property='figure'),
-    #     [
-    #     Input(component_id='years-picker', component_property='value'),
-    #     Input(component_id='categories-picker', component_property='value')])
+    @app.callback(
+        Output(component_id='graph-commodities', component_property='figure'),
+        [
+        Input(component_id='years-picker', component_property='value'),
+        Input(component_id='categories-picker', component_property='value')])
 
-    # def update_bubble_plot(selected_year, selected_category):
-    #     print(selected_year)
-    #     print(selected_category)
+    def update_bubble_plot(selected_year, selected_category):
+        print(selected_category)
+        print(selected_year)
+        return selected_year, selected_category
 
     return app.server
 
