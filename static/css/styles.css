@@ -1,0 +1,41 @@
+.page-container {
+    background-color: rgb(255, 255, 255);
+    margin: 10% 10% 10% 10%;
+    height: 85%;
+    border-radius: 10px;
+    min-width: 210px;
+}
+
+.background {
+    background: url('static/images/background-img.jpg') no-repeat;
+    background-attachment: fixed;
+    background-size: 100vw;
+    height: 100vh;
+}
+
+.title-container {
+    margin-top: 10%;
+}
+
+.title {
+    padding: 5%;
+    font-size: 4vw;
+    color: rgb(51, 49, 49);
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Gloock', serif;
+}
+
+.icon-title {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1vw;
+    font-weight: 700;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+
