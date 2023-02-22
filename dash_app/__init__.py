@@ -116,7 +116,7 @@ def dash_app_global(flask_app, path):
                                 id='categories-picker', 
                                 options = categories_num,
                                 value = categories_num[0]),
-                        ], style={'width': '48%', 'display':'inline-block'}),
+                        ], style={'width': '20%', 'display':'inline-block'}),
                         html.Div([
                             dcc.Graph(id='graph-commodities'),
                         ]),
