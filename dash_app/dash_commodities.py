@@ -125,6 +125,8 @@ def dash_app_commodities(flask_app, path):
         component and prompts a Plotly bar plot, having the sum of the total
         traded in USD by category """
         years_range = years[years_input[0]:years_input[1]]
+        if not years_range:
+            years_range = [years[years_input[0]]]
         # df with values within the year range
         df_short = df[df['year'].isin(years_range)] 
         # df with the sum of total traded by category
@@ -137,7 +139,7 @@ def dash_app_commodities(flask_app, path):
                         color=[1, 2, 3, 4, 5, 6, 7], # categories numbers
                         colorscale='teal'),
                     # shows this legend when hover
-                    hovertemplate='<br>Total USD: %{y}<br>')
+                    hovertemplate='<br>Total USD: %{y} $<br>')
         layout = go.Layout(
                     margin=dict(l=20, r=20, t=20, b=20),
                     bargap=0.1,
