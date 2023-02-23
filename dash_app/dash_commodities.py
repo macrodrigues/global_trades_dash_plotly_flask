@@ -17,7 +17,7 @@ flows = list(df['flow'].drop_duplicates())
 flows.sort()
 
 # CUSTOMIZATION
-colors_traces_lineplot = [
+colors_traces = [
     '#004242', 
     '#008080', 
     '#3ab09e', 
@@ -149,7 +149,7 @@ def dash_app_commodities(flask_app, path):
                     showlegend=False, # table being used for legend
                     template = 'plotly_white',
                     yaxis=dict(
-                        title='Total traded (USD)',
+                        title='Trade (USD)',
                         title_standoff = 40,
                         showgrid = False, 
                         side= 'left'),
@@ -183,9 +183,9 @@ def dash_app_commodities(flask_app, path):
                     # meta variable allows to add an extra feature to the
                     # hover legend
                     meta = str(category) + ') ' + categories_dict[category],
-                    line=dict(color=colors_traces_lineplot[i]),
+                    line=dict(color=colors_traces[i]),
                     hovertemplate=\
-                        '<br>Year: %{x}<br>Traded: %{y}<br>Category: %{meta}<br>',
+                        '<br>Year: %{x}<br>Total USD: %{y} $<br>Category: %{meta}<br>',
                     showlegend=True))
             
         return {
