@@ -65,7 +65,7 @@ years.sort()
 flows = list(df['flow'].drop_duplicates())
 flows.sort()
 
-def dash_app_global(flask_app, path):
+def dash_app_commodities(flask_app, path):
     app = Dash(
         __name__,
         server = flask_app,
@@ -98,7 +98,6 @@ def dash_app_global(flask_app, path):
                             marks=years,
                             step=1,
                             value = [0, 1],
-                            # dots=True, 
                             updatemode='mouseup', 
                             vertical= False
                         )

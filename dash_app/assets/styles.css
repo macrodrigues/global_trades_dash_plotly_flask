@@ -1,14 +1,13 @@
 html {
-    min-height: 100%;
     background: url('background-img.jpg') no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-size: 100vw;
-    height: 100vh;
+    /* background-size: 100vw; */
+    /* height: 100vh; */
  }
 
 body {
-    margin: 10% 10% 10% 10%;
+    margin: 10%;
     border-radius: 10px;
 }
 
@@ -33,14 +32,13 @@ h3.subtitle {
     font-size: 1.5vw;    
     text-align: center;
     padding-top: 5%;
-    padding-bottom: 2%;
 }
 
 .evolution-graph {
     justify-content: center;
     align-items: center;
     display: flex;
-    padding: 3%;
+    padding: 1.5%;
 }
 
 .table-body {
@@ -50,7 +48,7 @@ h3.subtitle {
 }
 
 .th-header {
-    background-color: #5F9EA0;
+    background-color: #008080;
     color: white;
   }
 
@@ -60,4 +58,25 @@ h3.subtitle {
     margin: auto;
 }
 
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+}
 
+.button-next {
+    margin: 2%;
+    height: 3.1vw;
+    width: 10vw;
+    border-radius: 10px;
+    color: antiquewhite;
+    background-color: teal;
+    border-color: teal;
+}
+
+.button-next:hover {
+    color: black;
+    background-color: rgb(80, 190, 190);
+    border-color: rgb(80, 190, 190);
+}

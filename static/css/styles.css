@@ -1,9 +1,12 @@
 .page-container {
     background-color: rgb(255, 255, 255);
-    margin: 10% 10% 10% 10%;
-    height: 85%;
+    margin: 15%;
     border-radius: 10px;
-    min-width: 210px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .background {
@@ -34,8 +37,20 @@
 }
 
 .row {
-    margin-right: 0;
-    margin-left: 0;
+    margin: auto;
+    padding-bottom: 5%;
+    justify-content: center;
+}
+
+.card-img-top {
+    margin: auto;
+    padding: -5%;
+    width: 12vw;
+    height: 12vw
+}
+
+.col-md-6 {
+    flex: 0 0 20%
 }
 
 
