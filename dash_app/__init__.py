@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import math
 import plotly.express as px
 import plotly.graph_objects as go
 import dash_bootstrap_components as dbc
@@ -61,8 +62,8 @@ df = clean_df(df)
 # Dropdown values
 years = list(df.year.drop_duplicates())
 years.sort()
-categories_num = list(df['category_num'].drop_duplicates())
-categories_num.sort()
+flows = list(df['flow'].drop_duplicates())
+flows.sort()
 
 def dash_app_global(flask_app, path):
     app = Dash(
@@ -105,35 +106,22 @@ def dash_app_global(flask_app, path):
                     html.Div([
                         html.H3(
                             className='subtitle',
-                            children="Total traded by commodity" 
+                            children="Total traded by category in the last 20 years" 
                         ),
                         html.Div([
                             html.Div([
                                 html.H4(
-                                    children='Year',
+                                    children='Flow',
                                     style={'font-size': '1.2vw'}),
                                 dcc.Dropdown(
-                                    id='years-picker', 
-                                    options=years,
-                                    value=years[-1]),
+                                    id='flow-picker', 
+                                    options=flows,
+                                   value=flows[0]),
                             ], style={
                                 'width': '15%', 
                                 'display':'inline-block',
                                 'margin': "2% 2% 2% 2%"}),
-                            html.Div([
-                                html.H4(
-                                    children='Category',
-                                    style={'font-size': '1.2vw'}),
-                                dcc.Dropdown(
-                                    id='categories-picker', 
-                                    options=categories_num,
-                                    value=categories_num[0]),
-                            ], style={
-                                'width': '10%', 
-                                'display':'inline-block',
-                                'margin': "2% 2% 2% 2%"})
                         ], className='dropdowns-container'),
-
                         html.Div([
                             dcc.Graph(id='graph-commodities'),
                         ]),
@@ -183,14 +171,38 @@ def dash_app_global(flask_app, path):
        
     @app.callback(
         Output(component_id='graph-commodities', component_property='figure'),
-        [
-        Input(component_id='years-picker', component_property='value'),
-        Input(component_id='categories-picker', component_property='value')])
+        [Input(component_id='flow-picker', component_property='value')])
 
-    def update_bubble_plot(selected_year, selected_category):
-        print(selected_category)
-        print(selected_year)
-        return selected_year, selected_category
+    def update_bubble_plot(flows_input):
+        df_short = df[df['year'] >= 1986]
+        df_short = df_short[df_short.flow == flows_input]
+        traces = []
+        for category in df_short['category_num'].unique():
+            df_by_cat = df_short[df_short['category_num'] == category]
+            df_by_cat = df_by_cat.groupby('year').sum()
+            traces.append(
+                go.Line(
+                    x = list(df_by_cat.groupby('year').sum().index),
+                    y = df_by_cat['trade_usd'],
+                    mode='lines+markers',
+                    name = category, 
+                    showlegend=True))
+            
+        return {
+            'data': traces, # these are go.Scatter() objects
+            'layout':go.Layout( # plot's layout
+                # title= f"Exoplanets discovered in {selected_year}",
+                xaxis = {
+                    'showgrid': False,
+                    'title': dict(text = 'Last 20 Years'),
+                    'title_standoff':40,
+                    'nticks':30
+                    },
+                yaxis = {
+                    'title': 'Trade (USD)', 
+                    'showgrid': False,
+                    'automargin': True,
+                    'rangemode':'tozero'})}
 
     return app.server
 

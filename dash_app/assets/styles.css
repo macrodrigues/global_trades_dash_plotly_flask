@@ -14,7 +14,7 @@ body {
 
 .page-container {
     background-color: rgb(255, 255, 255);
-    margin: 5% 10% 10% 10%;
+    /* margin: 5% 10% 10% 10%; */
     /* height: 85%; */
     border-radius: 10px;
 }
@@ -40,6 +40,7 @@ h3.subtitle {
     justify-content: center;
     align-items: center;
     display: flex;
+    padding: 3%;
 }
 
 .table-body {
