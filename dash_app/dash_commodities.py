@@ -12,13 +12,8 @@ from dash.dependencies import Input, Output
 from .preprocessing import clean_df
 from .components.table_categories import gen_table_categories, categories_dict
 
-# PATHS
-# DATA_PATH_FULL = 'data/commodity_trade_statistics_data.csv'
-DATA_PATH_SAMPLE = 'data/commodity_trade_statistics_data_SAMPLE.csv'
-
 # DATAFRAME
-df = pd.read_csv(DATA_PATH_SAMPLE)  # choose the PATH
-df = clean_df(df)
+df = clean_df(pd.read_csv('data/commodity_trade_statistics_data.csv'))
 
 # INPUT VALUES
 years = list(df.year.drop_duplicates())
