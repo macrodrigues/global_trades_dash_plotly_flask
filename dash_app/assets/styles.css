@@ -2,8 +2,6 @@ html {
     background: url('background-img.jpg') no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    /* background-size: 100vw; */
-    /* height: 100vh; */
  }
 
 body {
@@ -13,8 +11,6 @@ body {
 
 .page-container {
     background-color: rgb(255, 255, 255);
-    /* margin: 5% 10% 10% 10%; */
-    /* height: 85%; */
     border-radius: 10px;
 }
 
@@ -32,6 +28,7 @@ h3.subtitle {
     font-size: 1.5vw;    
     text-align: center;
     padding-top: 5%;
+    padding-bottom: 2%;
 }
 
 .evolution-graph {
@@ -42,14 +39,23 @@ h3.subtitle {
 }
 
 .table-body {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    color: dimgrey;
     background-color: #F0F8FF;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 0.9vw;
 
 }
 
 .th-header {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
     background-color: #008080;
     color: white;
+    font-size: 0.9vw;
+    font-weight: 600;
+    border: 2px solid black;
   }
 
 .dropdowns-container {
@@ -67,7 +73,7 @@ h3.subtitle {
 
 .button-next {
     height: 3.1vw;
-    width: 12vw;
+    width: 15vw;
     border-radius: 10px;
     color: antiquewhite;
     background-color: teal;
@@ -78,4 +84,18 @@ h3.subtitle {
     color: black;
     background-color: rgb(80, 190, 190);
     border-color: rgb(80, 190, 190);
+}
+
+label {
+    padding-right: 1.5%;
+}
+
+.label-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2.5%;
+    margin: auto;
+    width: 30vw;
+    font-size: 12px;
 }
