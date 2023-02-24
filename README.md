@@ -3,8 +3,10 @@
 This project aims to analyse global trades by commodities and countries. The dataset for this project can be found here: [Global Commodity Trade Statistics](https://www.kaggle.com/datasets/unitednations/global-commodity-trade-statistics?resource=download)
 
 ## Instructions
+Note that the data available in the repository is just a sample of 50000 entries. To analyse all the data, follow the instructions:
 
 - Download the dataset from kaggle and save it in 'data' as 'commodity_trade_statistics_data.csv'.
+- Choose the DATA_PATH_FULL in dash_commodities, to work with all the data.
 - Install the python libraries in the requirements.txt. 
 
 ## Introduction
