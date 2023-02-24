@@ -2,6 +2,11 @@
 
 This project aims to analyse global trades by commodities and countries. The dataset for this project can be found here: [Global Commodity Trade Statistics](https://www.kaggle.com/datasets/unitednations/global-commodity-trade-statistics?resource=download)
 
+## Instructions
+
+1 - Download the dataset from kaggle and save it in 'data' as 'commodity_trade_statistics_data.csv'.
+2 - Install the python libraries in the requirements.txt. 
+
 ## Introduction
 
 I used Flask, Dash and Plotly to visualize the data. The project is composed of three pages. Being that, the main page is rendered by Flask and the other two by Dash, having the Plotly graphs inside.
