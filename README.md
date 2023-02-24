@@ -4,8 +4,8 @@ This project aims to analyse global trades by commodities and countries. The dat
 
 ## Instructions
 
-1 - Download the dataset from kaggle and save it in 'data' as 'commodity_trade_statistics_data.csv'.
-2 - Install the python libraries in the requirements.txt. 
+- Download the dataset from kaggle and save it in 'data' as 'commodity_trade_statistics_data.csv'.
+- Install the python libraries in the requirements.txt. 
 
 ## Introduction
 
