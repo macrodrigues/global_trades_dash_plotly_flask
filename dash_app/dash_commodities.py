@@ -13,7 +13,7 @@ from .preprocessing import clean_df
 from .components.table_categories import gen_table_categories, categories_dict
 
 # PATHS
-DATA_PATH_FULL = 'data/commodity_trade_statistics_data.csv'
+# DATA_PATH_FULL = 'data/commodity_trade_statistics_data.csv'
 DATA_PATH_SAMPLE = 'data/commodity_trade_statistics_data_SAMPLE.csv'
 
 # DATAFRAME
