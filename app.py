@@ -5,7 +5,6 @@ bridged to the Flask Server, and they will
 only render the Dash application when routed to the given paths
 
 """
-import os
 from flask import Flask, render_template
 from dash_app.dash_commodities import dash_app_commodities
 from dash_app.dash_countries import dash_app_countries
@@ -23,7 +22,4 @@ def index():
 
 
 if __name__ == '__main__':
-    server.run(
-        port=int(os.environ.get("PORT", 8080)),
-        host='0.0.0.0',
-        debug=True)
+    server.run(port=5000)
