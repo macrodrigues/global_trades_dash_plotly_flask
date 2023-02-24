@@ -1,6 +1,6 @@
 # Visualize Global Commodity Trade Dataset using Flask, Dash and Plotly
 
-This project aims to analyse global trades by commodities and countries. The dataset for this project can be found here:[Global Commodity Trade Statistics](https://www.kaggle.com/datasets/unitednations/global-commodity-trade-statistics?resource=download)
+This project aims to analyse global trades by commodities and countries. The dataset for this project can be found here: [Global Commodity Trade Statistics](https://www.kaggle.com/datasets/unitednations/global-commodity-trade-statistics?resource=download)
 
 ## Introduction
 
