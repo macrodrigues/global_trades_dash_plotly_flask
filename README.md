@@ -22,7 +22,7 @@ In this page, we have two plots and one table. In the bottom, there are two butt
 #### Bar Plot
 
 The bar plot shows the total trades in USD per category of commodity along the years. It takes two inputs, the years' range and the flow (import, export, etc...). For the first input, I used a slider, to get the range, and for the flows I used a dropdown menu.
-Just next to the bar plot, we can see a table that was built using bootstrap components (dash_bootstrap_components).
+Just next to the bar plot, we can see a table that was built using bootstrap components (*dash_bootstrap_components*).
 
 #### Line plot
 
@@ -41,7 +41,8 @@ The pie plot shows the trades per category (commodities) by country . It allows 
 
 #### Bubble plot
 
-This scatter plot can be a little confusing. It displays the trades per European Countries, and the size of the markers represent the weight (in Kg) of the produts from category. It takes the year and the flow as input. The first using a dropdown menu,  and the second the checklist.
+This scatter plot can be a little confusing. It displays the trades per European Countries, and the size of the markers represent the weight (in Kg) of the produts from the category. It takes the year and the flow as input. The first using a dropdown menu,  and the second the checklist.
 
+## Conclusions
 
-
+The dataset is huge, therefore the options for data visualization are numerous. For example, it gets difficult to display all the commodities, either as input or output. So I decided to work with categories instead. But, it would be interesting to tackle more precise information, for example by taking certain commodities or countries. This could allow to implement other types of plots, such as cloropleth graphs. It also lacks of more statistical information, a boxplot or a heatmap could be interesting options to add in the future. 
