@@ -31,7 +31,7 @@ Just next to the bar plot, we can see a table that was built using bootstrap com
 
 #### Line plot
 
-The bline plot shows the total trades in USD per year, and displays different traces for each category. This plot allows to see the evolution of the trades along the years. It only takes the flow as the input, which is rendered using a dropdown menu.
+The line plot shows the total trades in USD per year, and displays different traces for each category. This plot allows to see the evolution of the trades along the years. It only takes the flow as the input, which is rendered using a dropdown menu.
 
 ### Countries Page
 
